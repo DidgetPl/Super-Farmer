@@ -1,0 +1,25 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1715719789
+export_presets.cfg::TextFile::-1::1715717651::0::1::::<><>::
+icon.svg::CompressedTexture2D::213533632619639907::1715671491::1715671497::1::::<><>::
+::res://Exports/::1715717650
+::res://Scenes/::1715718422
+game.tscn::PackedScene::8187189859161270349::1715718422::0::1::::<><>::res://Scripts/Menedżer rozgrywki.gd<>res://Scripts/Główna plansza.gd<>uid://bwknkbk8b71be::::res://Sprites/królik.png<>uid://xmi13lhttmb0::::res://Sprites/owca.png<>uid://dvme5x5oib6fx::::res://Sprites/świnia.png<>uid://ci0bjtky8y1vv::::res://Sprites/krowa.png<>uid://br68xvk7bwync::::res://Sprites/koń.png<>uid://ccb71n3hmk8u0::::res://Sprites/mały pies.png<>uid://dy7ufm3a1w385::::res://Sprites/duży pies.png<>res://Scripts/Rzut kośćmi.gd<>res://Scripts/Wymiana.gd<>res://Scripts/Przyciski opcji.gd<>res://Scripts/Button.gd
+::res://Scripts/::1715717428
+Button.gd::GDScript::-1::1715717428::0::1::::<>Button<>::
+Główna plansza.gd::GDScript::-1::1715717249::0::1::::<>Node2D<>::
+Menedżer rozgrywki.gd::GDScript::-1::1715717206::0::1::::<>Node2D<>::
+Przyciski opcji.gd::GDScript::-1::1715709789::0::1::::<>Node2D<>::
+Rzut kośćmi.gd::GDScript::-1::1715716330::0::1::::<>Button<>::
+Wymiana.gd::GDScript::-1::1715716243::0::1::::<>Area2D<>::
+::res://Sprites/::1715712806
+duży pies.png::CompressedTexture2D::8911078328917215296::1715688809::1715688850::1::::<><>::
+koń.png::CompressedTexture2D::3645672589831170524::1715688823::1715688850::1::::<><>::
+krowa.png::CompressedTexture2D::5386039364007086359::1715688833::1715688850::1::::<><>::
+królik.png::CompressedTexture2D::3952026269588811710::1715688785::1715688850::1::::<><>::
+lis.png::CompressedTexture2D::7472066752477255135::1715688799::1715688850::1::::<><>::
+mały pies.png::CompressedTexture2D::4917273533218972213::1715688816::1715688850::1::::<><>::
+owca.png::CompressedTexture2D::1639649591297972819::1715688848::1715688850::1::::<><>::
+Tokens.png::CompressedTexture2D::7244248339508338093::1715712803::1715712806::1::::<><>::
+wilk.png::CompressedTexture2D::6001265404743376516::1715688794::1715688850::1::::<><>::
+świnia.png::CompressedTexture2D::8658297997342961029::1715688842::1715688850::1::::<><>::

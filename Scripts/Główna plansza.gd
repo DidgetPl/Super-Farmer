@@ -29,6 +29,29 @@ func check_if_not_too_many():
 		if gm.all_animals[key] < sum[key]:
 			current_farm[gm.cfi][key] -= (sum[key] - gm.all_animals[key])
 
+func auto_trade():
+	if gm.cfi == 0:
+		return
+	
+	if current_farm[gm.cfi]["królik"] >= 6:
+		current_trade = ["królik", "owca", 6]
+		handle_trade(true)
+	elif current_farm[gm.cfi]["owca"] >= 1 and current_farm[gm.cfi]["mały pies"] < 1:
+		current_trade = ["owca", "mały pies", 1]
+		handle_trade(true)
+	elif current_farm[gm.cfi]["owca"] >= 2:
+		current_trade = ["owca", "świnia", 2]
+		handle_trade(true)
+	elif current_farm[gm.cfi]["świnia"] >= 3:
+		current_trade = ["świnia", "krowa", 3]
+		handle_trade(true)
+	elif current_farm[gm.cfi]["krowa"] >= 1 and current_farm[gm.cfi]["duży pies"] < 1:
+		current_trade = ["krowa", "duży pies", 1]
+		handle_trade(true)
+	elif current_farm[gm.cfi]["krowa"] >= 2:
+		current_trade = ["krowa", "koń", 1]
+		handle_trade(true)
+
 func handle_trade(is_right: bool):
 	current_trade[0] = current_trade[0].to_lower()
 	current_trade[1] = current_trade[1].to_lower()

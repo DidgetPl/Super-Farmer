@@ -59,6 +59,7 @@ func roll_dices():
 					ann.text += "Wylosowałeś " + accusative[wall]+ ", ale nie posiadasz tego zwierzęcia. "
 	farm.check_if_not_too_many()
 	farm.update_label()
+	farm.auto_trade()
 	gm.update_game_status()
 
 func receiving(wall, shift):
