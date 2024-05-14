@@ -1,0 +1,452 @@
+[gd_scene load_steps=20 format=3 uid="uid://dov6254njn5lh"]
+
+[ext_resource type="Script" path="res://Scripts/Menedżer rozgrywki.gd" id="1_dv4he"]
+[ext_resource type="Script" path="res://Scripts/Główna plansza.gd" id="1_o82n1"]
+[ext_resource type="Texture2D" uid="uid://bwknkbk8b71be" path="res://Sprites/królik.png" id="1_st12p"]
+[ext_resource type="Texture2D" uid="uid://xmi13lhttmb0" path="res://Sprites/owca.png" id="2_oq7m3"]
+[ext_resource type="Texture2D" uid="uid://dvme5x5oib6fx" path="res://Sprites/świnia.png" id="3_k71yw"]
+[ext_resource type="Texture2D" uid="uid://ci0bjtky8y1vv" path="res://Sprites/krowa.png" id="4_vojv6"]
+[ext_resource type="Texture2D" uid="uid://br68xvk7bwync" path="res://Sprites/koń.png" id="5_s05ca"]
+[ext_resource type="Texture2D" uid="uid://ccb71n3hmk8u0" path="res://Sprites/mały pies.png" id="6_qauhp"]
+[ext_resource type="Texture2D" uid="uid://dy7ufm3a1w385" path="res://Sprites/duży pies.png" id="7_tbr4n"]
+[ext_resource type="Script" path="res://Scripts/Rzut kośćmi.gd" id="8_5dj1a"]
+[ext_resource type="Script" path="res://Scripts/Wymiana.gd" id="9_sqb66"]
+[ext_resource type="Script" path="res://Scripts/Przyciski opcji.gd" id="11_2at0j"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_gic44"]
+font_size = 100
+outline_size = 15
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_iw3gn"]
+font_size = 70
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jnsaf"]
+size = Vector2(322, 99.3333)
+
+[sub_resource type="LabelSettings" id="LabelSettings_h6thr"]
+font_size = 25
+
+[sub_resource type="GDScript" id="GDScript_kodui"]
+script/source = "extends Label
+
+var komunikaty = [\"Wylosowałeś\"]
+"
+
+[sub_resource type="LabelSettings" id="LabelSettings_6axcn"]
+font_size = 80
+
+[sub_resource type="LabelSettings" id="LabelSettings_erasi"]
+font_size = 100
+outline_size = 15
+outline_color = Color(0, 0, 0, 1)
+
+[node name="Node2D" type="Node2D"]
+scale = Vector2(0.75, 0.75)
+script = ExtResource("1_dv4he")
+
+[node name="Główna plansza" type="Node2D" parent="."]
+position = Vector2(185, 0)
+script = ExtResource("1_o82n1")
+
+[node name="Znaczniki" type="Node2D" parent="Główna plansza"]
+
+[node name="Królik" type="Sprite2D" parent="Główna plansza/Znaczniki"]
+position = Vector2(300, 100)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("1_st12p")
+
+[node name="Owca" type="Sprite2D" parent="Główna plansza/Znaczniki"]
+position = Vector2(300, 250)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("2_oq7m3")
+
+[node name="Świnia" type="Sprite2D" parent="Główna plansza/Znaczniki"]
+position = Vector2(300, 400)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("3_k71yw")
+
+[node name="Krowa" type="Sprite2D" parent="Główna plansza/Znaczniki"]
+position = Vector2(700, 100)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("4_vojv6")
+
+[node name="Koń" type="Sprite2D" parent="Główna plansza/Znaczniki"]
+position = Vector2(700, 250)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("5_s05ca")
+
+[node name="Mały Pies" type="Sprite2D" parent="Główna plansza/Znaczniki"]
+position = Vector2(700, 400)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("6_qauhp")
+
+[node name="Duży Pies" type="Sprite2D" parent="Główna plansza/Znaczniki"]
+position = Vector2(875, 400)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("7_tbr4n")
+
+[node name="Etykiety" type="Node2D" parent="Główna plansza"]
+
+[node name="Królik" type="Label" parent="Główna plansza/Etykiety"]
+offset_left = 400.0
+offset_top = 20.0
+offset_right = 600.0
+offset_bottom = 160.0
+text = "1"
+label_settings = SubResource("LabelSettings_gic44")
+vertical_alignment = 1
+
+[node name="Owca" type="Label" parent="Główna plansza/Etykiety"]
+offset_left = 400.0
+offset_top = 170.0
+offset_right = 600.0
+offset_bottom = 310.0
+text = "0"
+label_settings = SubResource("LabelSettings_gic44")
+vertical_alignment = 1
+
+[node name="Świnia" type="Label" parent="Główna plansza/Etykiety"]
+offset_left = 400.0
+offset_top = 320.0
+offset_right = 600.0
+offset_bottom = 460.0
+text = "0"
+label_settings = SubResource("LabelSettings_gic44")
+vertical_alignment = 1
+
+[node name="Krowa" type="Label" parent="Główna plansza/Etykiety"]
+offset_left = 800.0
+offset_top = 20.0
+offset_right = 1000.0
+offset_bottom = 160.0
+text = "0"
+label_settings = SubResource("LabelSettings_gic44")
+vertical_alignment = 1
+
+[node name="Koń" type="Label" parent="Główna plansza/Etykiety"]
+offset_left = 800.0
+offset_top = 170.0
+offset_right = 1000.0
+offset_bottom = 310.0
+text = "0"
+label_settings = SubResource("LabelSettings_gic44")
+vertical_alignment = 1
+
+[node name="Tabela wymian" type="Node2D" parent="."]
+position = Vector2(340, 630)
+
+[node name="Znaczniki" type="Node2D" parent="Tabela wymian"]
+
+[node name="Królik" type="Sprite2D" parent="Tabela wymian/Znaczniki"]
+position = Vector2(-230, -50)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("1_st12p")
+
+[node name="Owca" type="Sprite2D" parent="Tabela wymian/Znaczniki"]
+position = Vector2(-60, -50)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_oq7m3")
+
+[node name="Królik2" type="Sprite2D" parent="Tabela wymian/Znaczniki"]
+position = Vector2(-230, 50)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_oq7m3")
+
+[node name="Owca2" type="Sprite2D" parent="Tabela wymian/Znaczniki"]
+position = Vector2(-60, 50)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("3_k71yw")
+
+[node name="Królik3" type="Sprite2D" parent="Tabela wymian/Znaczniki"]
+position = Vector2(-230, 150)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("3_k71yw")
+
+[node name="Owca3" type="Sprite2D" parent="Tabela wymian/Znaczniki"]
+position = Vector2(-60, 150)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("4_vojv6")
+
+[node name="Królik4" type="Sprite2D" parent="Tabela wymian/Znaczniki"]
+position = Vector2(119.833, -50.1667)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("4_vojv6")
+
+[node name="Owca4" type="Sprite2D" parent="Tabela wymian/Znaczniki"]
+position = Vector2(289.833, -50.1667)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("5_s05ca")
+
+[node name="Królik5" type="Sprite2D" parent="Tabela wymian/Znaczniki"]
+position = Vector2(119.833, 49.8335)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_oq7m3")
+
+[node name="Owca5" type="Sprite2D" parent="Tabela wymian/Znaczniki"]
+position = Vector2(289.833, 49.8335)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("6_qauhp")
+
+[node name="Królik6" type="Sprite2D" parent="Tabela wymian/Znaczniki"]
+position = Vector2(119.833, 149.833)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("4_vojv6")
+
+[node name="Owca6" type="Sprite2D" parent="Tabela wymian/Znaczniki"]
+position = Vector2(289.833, 149.833)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("7_tbr4n")
+
+[node name="Etykiety" type="Node2D" parent="Tabela wymian"]
+
+[node name="Wymiana" type="Label" parent="Tabela wymian/Etykiety"]
+offset_left = -320.0
+offset_top = -120.0
+offset_right = -270.0
+offset_bottom = 20.0
+text = "6"
+label_settings = SubResource("LabelSettings_iw3gn")
+vertical_alignment = 1
+
+[node name="Wymiana2" type="Label" parent="Tabela wymian/Etykiety"]
+offset_left = -180.0
+offset_top = -120.0
+offset_right = -80.0
+offset_bottom = 20.0
+text = "=1"
+label_settings = SubResource("LabelSettings_iw3gn")
+vertical_alignment = 1
+
+[node name="Wymiana3" type="Label" parent="Tabela wymian/Etykiety"]
+offset_left = -320.0
+offset_top = -20.0
+offset_right = -270.0
+offset_bottom = 120.0
+text = "2"
+label_settings = SubResource("LabelSettings_iw3gn")
+vertical_alignment = 1
+
+[node name="Wymiana4" type="Label" parent="Tabela wymian/Etykiety"]
+offset_left = -180.0
+offset_top = -20.0
+offset_right = -80.0
+offset_bottom = 120.0
+text = "=1"
+label_settings = SubResource("LabelSettings_iw3gn")
+vertical_alignment = 1
+
+[node name="Wymiana5" type="Label" parent="Tabela wymian/Etykiety"]
+offset_left = -320.0
+offset_top = 80.0
+offset_right = -270.0
+offset_bottom = 220.0
+text = "3"
+label_settings = SubResource("LabelSettings_iw3gn")
+vertical_alignment = 1
+
+[node name="Wymiana6" type="Label" parent="Tabela wymian/Etykiety"]
+offset_left = -180.0
+offset_top = 80.0
+offset_right = -80.0
+offset_bottom = 220.0
+text = "=1"
+label_settings = SubResource("LabelSettings_iw3gn")
+vertical_alignment = 1
+
+[node name="Wymiana7" type="Label" parent="Tabela wymian/Etykiety"]
+offset_left = 29.3333
+offset_top = -119.333
+offset_right = 79.3333
+offset_bottom = 20.6667
+text = "2"
+label_settings = SubResource("LabelSettings_iw3gn")
+vertical_alignment = 1
+
+[node name="Wymiana8" type="Label" parent="Tabela wymian/Etykiety"]
+offset_left = 169.333
+offset_top = -119.333
+offset_right = 269.333
+offset_bottom = 20.6667
+text = "=1"
+label_settings = SubResource("LabelSettings_iw3gn")
+vertical_alignment = 1
+
+[node name="Wymiana9" type="Label" parent="Tabela wymian/Etykiety"]
+offset_left = 29.3333
+offset_top = -19.3333
+offset_right = 79.3333
+offset_bottom = 120.667
+text = "6"
+label_settings = SubResource("LabelSettings_iw3gn")
+vertical_alignment = 1
+
+[node name="Wymiana10" type="Label" parent="Tabela wymian/Etykiety"]
+offset_left = 169.333
+offset_top = -19.3333
+offset_right = 269.333
+offset_bottom = 120.667
+text = "=1"
+label_settings = SubResource("LabelSettings_iw3gn")
+vertical_alignment = 1
+
+[node name="Wymiana11" type="Label" parent="Tabela wymian/Etykiety"]
+offset_left = 29.3333
+offset_top = 80.6667
+offset_right = 79.3333
+offset_bottom = 220.667
+text = "6"
+label_settings = SubResource("LabelSettings_iw3gn")
+vertical_alignment = 1
+
+[node name="Wymiana12" type="Label" parent="Tabela wymian/Etykiety"]
+offset_left = 169.333
+offset_top = 80.6667
+offset_right = 269.333
+offset_bottom = 220.667
+text = "=1"
+label_settings = SubResource("LabelSettings_iw3gn")
+vertical_alignment = 1
+
+[node name="Obszary" type="Node2D" parent="Tabela wymian"]
+
+[node name="Owca" type="Area2D" parent="Tabela wymian/Obszary"]
+position = Vector2(-315, -90)
+script = ExtResource("9_sqb66")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tabela wymian/Obszary/Owca"]
+position = Vector2(150, 40)
+shape = SubResource("RectangleShape2D_jnsaf")
+
+[node name="Świnia" type="Area2D" parent="Tabela wymian/Obszary"]
+position = Vector2(-315, 10)
+script = ExtResource("9_sqb66")
+animal_1 = "Owca"
+animal_2 = "Świnia"
+animal_1_number = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tabela wymian/Obszary/Świnia"]
+position = Vector2(150, 40)
+shape = SubResource("RectangleShape2D_jnsaf")
+
+[node name="Krowa" type="Area2D" parent="Tabela wymian/Obszary"]
+position = Vector2(-315, 110)
+script = ExtResource("9_sqb66")
+animal_1 = "Świnia"
+animal_2 = "Krowa"
+animal_1_number = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tabela wymian/Obszary/Krowa"]
+position = Vector2(150, 40)
+shape = SubResource("RectangleShape2D_jnsaf")
+
+[node name="Koń" type="Area2D" parent="Tabela wymian/Obszary"]
+position = Vector2(35, -90)
+script = ExtResource("9_sqb66")
+animal_1 = "Krowa"
+animal_2 = "Koń"
+animal_1_number = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tabela wymian/Obszary/Koń"]
+position = Vector2(150, 40)
+shape = SubResource("RectangleShape2D_jnsaf")
+
+[node name="Mały Pies" type="Area2D" parent="Tabela wymian/Obszary"]
+position = Vector2(35, 10)
+script = ExtResource("9_sqb66")
+animal_1 = "Owca"
+animal_2 = "Mały Pies"
+animal_1_number = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tabela wymian/Obszary/Mały Pies"]
+position = Vector2(150, 40)
+shape = SubResource("RectangleShape2D_jnsaf")
+
+[node name="Duży Pies" type="Area2D" parent="Tabela wymian/Obszary"]
+position = Vector2(35, 110)
+script = ExtResource("9_sqb66")
+animal_1 = "Krowa"
+animal_2 = "Duży Pies"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tabela wymian/Obszary/Duży Pies"]
+position = Vector2(150, 40)
+shape = SubResource("RectangleShape2D_jnsaf")
+
+[node name="Przyciski" type="Node2D" parent="."]
+
+[node name="Rzut kośćmi" type="Button" parent="Przyciski"]
+offset_left = 850.0
+offset_top = 525.0
+offset_right = 1450.0
+offset_bottom = 825.0
+theme_override_font_sizes/font_size = 50
+text = "RZUT KOŚĆMI"
+script = ExtResource("8_5dj1a")
+
+[node name="Komunikat" type="Label" parent="."]
+offset_left = 60.0
+offset_top = 120.0
+offset_right = 360.0
+offset_bottom = 520.0
+text = "Podczas swojej tury możesz dokonać wymiany i rzucić kośćmi"
+label_settings = SubResource("LabelSettings_h6thr")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+script = SubResource("GDScript_kodui")
+
+[node name="Przyciski opcji" type="Node2D" parent="."]
+visible = false
+position = Vector2(800, 450)
+script = ExtResource("11_2at0j")
+
+[node name="Lewa opcja" type="Button" parent="Przyciski opcji"]
+offset_left = -650.0
+offset_top = -100.0
+offset_right = -100.0
+offset_bottom = 50.0
+theme_override_font_sizes/font_size = 40
+text = "Chcę Króliki"
+
+[node name="Prawa opcja" type="Button" parent="Przyciski opcji"]
+offset_left = 50.0
+offset_top = -100.0
+offset_right = 600.0
+offset_bottom = 50.0
+theme_override_font_sizes/font_size = 40
+text = "Chcę Owce"
+
+[node name="Gracz 1" type="Label" parent="."]
+offset_left = 38.6667
+offset_top = 20.0
+offset_right = 364.667
+offset_bottom = 133.0
+text = "GRACZ 1"
+label_settings = SubResource("LabelSettings_6axcn")
+
+[node name="Komunikat Zwycięstwa" type="Label" parent="."]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 310.667
+offset_top = 320.0
+offset_right = 1238.67
+offset_bottom = 460.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 100
+text = "GRACZ 1 WYGRAŁ!!!"
+label_settings = SubResource("LabelSettings_erasi")
+
+[connection signal="input_event" from="Tabela wymian/Obszary/Owca" to="Tabela wymian/Obszary/Owca" method="_on_input_event"]
+[connection signal="input_event" from="Tabela wymian/Obszary/Świnia" to="Tabela wymian/Obszary/Świnia" method="_on_input_event"]
+[connection signal="input_event" from="Tabela wymian/Obszary/Krowa" to="Tabela wymian/Obszary/Krowa" method="_on_input_event"]
+[connection signal="input_event" from="Tabela wymian/Obszary/Koń" to="Tabela wymian/Obszary/Koń" method="_on_input_event"]
+[connection signal="input_event" from="Tabela wymian/Obszary/Mały Pies" to="Tabela wymian/Obszary/Mały Pies" method="_on_input_event"]
+[connection signal="input_event" from="Tabela wymian/Obszary/Duży Pies" to="Tabela wymian/Obszary/Duży Pies" method="_on_input_event"]
+[connection signal="button_up" from="Przyciski/Rzut kośćmi" to="Przyciski/Rzut kośćmi" method="_on_button_up"]
+[connection signal="button_up" from="Przyciski opcji/Lewa opcja" to="Przyciski opcji" method="_on_lewa_opcja_button_up"]
+[connection signal="button_up" from="Przyciski opcji/Prawa opcja" to="Przyciski opcji" method="_on_prawa_opcja_button_up"]
