@@ -278,7 +278,7 @@ offset_left = 29.3333
 offset_top = -19.3333
 offset_right = 79.3333
 offset_bottom = 120.667
-text = "6"
+text = "1"
 label_settings = SubResource("LabelSettings_iw3gn")
 vertical_alignment = 1
 
@@ -296,7 +296,7 @@ offset_left = 29.3333
 offset_top = 80.6667
 offset_right = 79.3333
 offset_bottom = 220.667
-text = "6"
+text = "1"
 label_settings = SubResource("LabelSettings_iw3gn")
 vertical_alignment = 1
 
