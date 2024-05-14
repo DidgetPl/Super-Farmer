@@ -33,22 +33,22 @@ func auto_trade():
 	if gm.cfi == 0:
 		return
 	
-	if current_farm[gm.cfi]["królik"] >= 6:
+	if current_farm[gm.cfi]["królik"] > 7:
 		current_trade = ["królik", "owca", 6]
 		handle_trade(true)
-	elif current_farm[gm.cfi]["owca"] >= 1 and current_farm[gm.cfi]["mały pies"] < 1:
+	elif current_farm[gm.cfi]["owca"] > 1 and current_farm[gm.cfi]["mały pies"] < 1:
 		current_trade = ["owca", "mały pies", 1]
 		handle_trade(true)
-	elif current_farm[gm.cfi]["owca"] >= 2:
+	elif current_farm[gm.cfi]["owca"] > 2:
 		current_trade = ["owca", "świnia", 2]
 		handle_trade(true)
-	elif current_farm[gm.cfi]["świnia"] >= 3:
+	elif current_farm[gm.cfi]["świnia"] > 3:
 		current_trade = ["świnia", "krowa", 3]
 		handle_trade(true)
-	elif current_farm[gm.cfi]["krowa"] >= 1 and current_farm[gm.cfi]["duży pies"] < 1:
+	elif current_farm[gm.cfi]["krowa"] > 1 and current_farm[gm.cfi]["duży pies"] < 1:
 		current_trade = ["krowa", "duży pies", 1]
 		handle_trade(true)
-	elif current_farm[gm.cfi]["krowa"] >= 2:
+	elif current_farm[gm.cfi]["krowa"] > 2:
 		current_trade = ["krowa", "koń", 1]
 		handle_trade(true)
 
@@ -58,12 +58,14 @@ func handle_trade(is_right: bool):
 	
 	if is_right:
 		if current_farm[gm.cfi][current_trade[0]] < current_trade[2]:
+			gm.can_trade = true
 			$"../Komunikat".text = "Posiadasz za mało zwierząt, by dokonać tej wymiany."
 		else:
 			current_farm[gm.cfi][current_trade[0]] -= current_trade[2]
 			current_farm[gm.cfi][current_trade[1]] += 1
 	else:
 		if current_farm[gm.cfi][current_trade[1]] < 1:
+			gm.can_trade = true
 			$"../Komunikat".text = "Posiadasz za mało zwierząt, by dokonać tej wymiany."
 		else:
 			current_farm[gm.cfi][current_trade[0]] += current_trade[2]
