@@ -1,8 +1,8 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1715723289
-export_presets.cfg::TextFile::-1::1715721360::0::1::::<><>::
+::res://::1715725343
+export_presets.cfg::TextFile::-1::1715723318::0::1::::<><>::
 icon.svg::CompressedTexture2D::213533632619639907::1715671491::1715671497::1::::<><>::
-::res://Exports/::1715721360
+::res://Exports/::1715723317
 ::res://Scenes/::1715723215
 game.tscn::PackedScene::8187189859161270349::1715723215::0::1::::<><>::res://Scripts/Menedżer rozgrywki.gd<>res://Scripts/Główna plansza.gd<>uid://bwknkbk8b71be::::res://Sprites/królik.png<>uid://xmi13lhttmb0::::res://Sprites/owca.png<>uid://dvme5x5oib6fx::::res://Sprites/świnia.png<>uid://ci0bjtky8y1vv::::res://Sprites/krowa.png<>uid://br68xvk7bwync::::res://Sprites/koń.png<>uid://ccb71n3hmk8u0::::res://Sprites/mały pies.png<>uid://dy7ufm3a1w385::::res://Sprites/duży pies.png<>res://Scripts/Rzut kośćmi.gd<>res://Scripts/Wymiana.gd<>res://Scripts/Przyciski opcji.gd<>res://Scripts/Button.gd
 ::res://Scripts/::1715721327

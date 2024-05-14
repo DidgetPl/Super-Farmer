@@ -368,6 +368,7 @@ position = Vector2(35, 110)
 script = ExtResource("9_sqb66")
 animal_1 = "Krowa"
 animal_2 = "Duży Pies"
+animal_1_number = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Tabela wymian/Obszary/Duży Pies"]
 position = Vector2(150, 40)
